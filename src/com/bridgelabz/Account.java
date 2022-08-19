@@ -20,6 +20,30 @@ public class Account {
         System.out.println(accNo + " " + name + " " + balance);
     }
 
-
+    void deposit() {
+        long amt;
+        System.out.println("Enter the amount you want to deposit : ");
+        amt = sc.nextLong();
+        balance = balance + amt;
     }
+    void withdrawal() {
+        long amt;
+        System.out.println("Enter the amount you want to withdraw : ");
+        amt = sc.nextLong();
+        if (balance >= amt) {
+            balance = balance - amt;
+        } else {
+            System.out.println("Debit amount exceeded account balance. Transaction failed.");
+        }
+    }
+
+    boolean search(String acn) {
+        if (accNo.equals(acn)) {
+            showAccount();
+            return (true);
+        }
+        return (false);
+    }
+}
+
 
